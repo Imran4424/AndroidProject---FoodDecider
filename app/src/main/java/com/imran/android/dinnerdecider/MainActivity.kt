@@ -9,30 +9,28 @@ import android.widget.TextView
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-//    var textSelectedFood: TextView = findViewById(R.id.textSelectedFood) as TextView
-//    private val editTextAddFoodName: EditText = findViewById(R.id.editTextAddFoodName)
-//    private val buttonAddFood: Button = findViewById(R.id.buttonAdd)
-    private var buttonDecide: Button = TODO()
-//    private var foodList = arrayListOf("Buger", "Pizza", "Sandwich", "Biriani", "Chinese")
+    private lateinit var textSelectedFood: TextView
+    private lateinit var editTextAddFoodName: EditText
+    private var foodList = arrayListOf("Buger", "Pizza", "Sandwich", "Biriani", "Chinese")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonDecide = findViewById(R.id.buttonDecide)
+        textSelectedFood = findViewById(R.id.textSelectedFood)
+        editTextAddFoodName = findViewById(R.id.editTextAddFoodName)
     }
 
     fun addFood(view: View) {
-//        val newFood = editTextAddFoodName.text.toString()
-//        foodList.add(newFood)
+        val newFood = editTextAddFoodName.text.toString()
+        foodList.add(newFood)
 
-//        editTextAddFoodName.text.clear()
-//        editTextAddFoodName.clearComposingText()
+        editTextAddFoodName.text.clear()
     }
 
     fun decide(view: View) {
-//        val random = Random()
-//        val randomFood = random.nextInt(foodList.count())
-//        textSelectedFood.text = foodList[randomFood]
+        val random = Random()
+        val randomFood = random.nextInt(foodList.count())
+        textSelectedFood.text = foodList[randomFood]
     }
 }
